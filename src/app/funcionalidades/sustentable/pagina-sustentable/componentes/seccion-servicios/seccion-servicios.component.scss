@@ -1,0 +1,114 @@
+:host {
+  display: block;
+}
+
+.seccion-servicios {
+  &__titulo {
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: var(--color-accent);
+      border-radius: 2px;
+      margin: 0.75rem auto 0;
+    }
+  }
+
+  &__grilla {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+
+    @media (min-width: 640px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+.tarjeta-servicio {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  &__media {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background-color: var(--color-primary-dark);
+  }
+
+  &__imagen {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  &:hover &__imagen {
+    transform: scale(1.05);
+  }
+
+  &__video {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  &__contenido {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  &__nombre {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+
+  &__descripcion {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    margin-bottom: 1.25rem;
+    flex: 1;
+  }
+
+  &__boton {
+    display: inline-block;
+    padding: 0.625rem 1.75rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    border: none;
+    border-radius: 9999px;
+    cursor: pointer;
+    text-transform: uppercase;
+    align-self: flex-start;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.25);
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(245, 158, 11, 0.35);
+      filter: brightness(1.08);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}

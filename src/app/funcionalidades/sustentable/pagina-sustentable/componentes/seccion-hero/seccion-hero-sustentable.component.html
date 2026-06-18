@@ -1,0 +1,46 @@
+<section id="inicio" class="hero-sustentable">
+  <div class="hero-sustentable__fondo">
+    <img
+      src="assets/images/general/hero-sustentable.jpg"
+      alt="Energía sustentable — paneles solares"
+      class="hero-sustentable__imagen"
+      loading="eager"
+    />
+    <div class="hero-sustentable__superposicion"></div>
+  </div>
+
+  <div class="hero-sustentable__contenido contenedor">
+    <h1 class="hero-sustentable__titulo font-display text-white">
+      Estamos listos para empezar con tu proyecto
+    </h1>
+
+    <p class="hero-sustentable__subtitulo text-accent font-display">¡Contactanos!</p>
+
+    <p class="hero-sustentable__cuerpo text-white/90">
+      {{ aniosExperiencia() }}+ años de experiencia en Automatización volcados a reducir la
+      contaminación y cambiar la matriz energética del país.
+    </p>
+
+    <blockquote class="hero-sustentable__cita text-white/70 italic">
+      "La energía no se crea ni se destruye, la transformamos."
+    </blockquote>
+
+    <button
+      type="button"
+      class="hero-sustentable__boton-cta bg-accent text-white font-display"
+      (click)="desplazarAContacto()"
+    >
+      Solicitar Presupuesto
+    </button>
+  </div>
+
+  <!-- Wave SVG clip at bottom -->
+  <div class="hero-sustentable__ola">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M0,64 C360,120 720,0 1080,64 C1260,96 1380,80 1440,72 L1440,120 L0,120 Z"
+        fill="#ffffff"
+      />
+    </svg>
+  </div>
+</section>

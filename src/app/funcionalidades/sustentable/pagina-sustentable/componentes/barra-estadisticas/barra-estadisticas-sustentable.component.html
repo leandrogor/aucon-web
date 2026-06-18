@@ -1,0 +1,13 @@
+<section class="barra-estadisticas seccion-padding bg-primary-dark">
+  <div class="contenedor">
+    <div class="barra-estadisticas__grilla">
+      @for (contador of contadores(); track contador.etiqueta) {
+        <app-contador-animado
+          [valor]="contador.valor"
+          [sufijo]="contador.sufijo"
+          [etiqueta]="contador.etiqueta"
+        />
+      }
+    </div>
+  </div>
+</section>

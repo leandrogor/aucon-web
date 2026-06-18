@@ -1,0 +1,38 @@
+<section id="faq" class="seccion-faq seccion-padding">
+  <div class="contenedor">
+    <h2 class="titulo-seccion font-display">Preguntas y Respuestas</h2>
+
+    <div class="lista-faq">
+      @for (item of preguntas; track item.pregunta; let i = $index) {
+        <div class="faq-item" [class.abierto]="indiceFaqAbierto() === i">
+          <button
+            class="faq-pregunta"
+            (click)="alternarFaq(i)"
+            [attr.aria-expanded]="indiceFaqAbierto() === i"
+          >
+            <span>{{ item.pregunta }}</span>
+            <svg
+              class="faq-chevron"
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          @if (indiceFaqAbierto() === i) {
+            <div class="faq-respuesta">
+              <p>{{ item.respuesta }}</p>
+            </div>
+          }
+        </div>
+      }
+    </div>
+  </div>
+</section>

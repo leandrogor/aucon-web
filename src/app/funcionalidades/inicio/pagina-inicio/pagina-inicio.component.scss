@@ -1,0 +1,163 @@
+:host {
+  display: block;
+}
+
+.pagina-inicio {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.hero-contenedor {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+}
+
+.hero-tarjeta {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  min-height: 50dvh;
+  text-decoration: none;
+  color: #ffffff;
+  overflow: hidden;
+  transition:
+    filter 0.4s ease,
+    flex 0.5s ease;
+
+  @media (min-width: 768px) {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: inherit;
+    transition: transform 0.5s ease;
+    z-index: 0;
+  }
+
+  &:hover {
+    filter: brightness(1.1);
+
+    &::before {
+      transform: scale(1.03);
+    }
+
+    .hero-tarjeta__cta {
+      gap: 0.75rem;
+      letter-spacing: 0.12em;
+    }
+
+    .hero-tarjeta__logo {
+      transform: scale(1.05);
+    }
+  }
+
+  &--ingenieria {
+    background: linear-gradient(160deg, #06597b 0%, #044560 50%, #033750 100%);
+  }
+
+  &--sustentable {
+    background: linear-gradient(160deg, #0a4a2e 0%, #083d25 50%, #062f1c 100%);
+  }
+}
+
+.hero-tarjeta__contenido {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 3rem 2rem;
+  gap: 2rem;
+  animation: fadeInUp 0.8s ease both;
+
+  .hero-tarjeta--sustentable & {
+    animation-delay: 0.15s;
+  }
+}
+
+.hero-tarjeta__logo {
+  height: 120px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  transition: transform 0.4s ease;
+
+  @media (min-width: 768px) {
+    height: 160px;
+  }
+
+  @media (min-width: 1024px) {
+    height: 180px;
+  }
+}
+
+.hero-tarjeta__textos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.hero-tarjeta__division {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.hero-tarjeta__titulo {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+
+  @media (min-width: 768px) {
+    font-size: 2.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 3rem;
+  }
+}
+
+.hero-tarjeta__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 0.75rem 2rem;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+  transition:
+    gap 0.3s ease,
+    letter-spacing 0.3s ease,
+    border-color 0.3s ease,
+    background-color 0.3s ease;
+
+  &:hover {
+    border-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+}

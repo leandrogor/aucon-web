@@ -1,0 +1,58 @@
+<section id="servicios" class="seccion-servicios seccion-padding bg-surface-alt">
+  <div class="contenedor">
+    <h2 class="seccion-servicios__titulo font-display text-primary">
+      Hacemos la instalación a tu medida
+    </h2>
+
+    <div class="seccion-servicios__grilla">
+      @for (servicio of servicios(); track servicio.titulo) {
+        <article class="tarjeta-servicio tarjeta">
+          <!-- Image or Video -->
+          <div class="tarjeta-servicio__media">
+            @if (servicio.urlVideo) {
+              <iframe
+                [src]="servicio.urlVideo"
+                [title]="servicio.titulo"
+                loading="lazy"
+                allow="
+                  accelerometer;
+                  autoplay;
+                  clipboard-write;
+                  encrypted-media;
+                  gyroscope;
+                  picture-in-picture;
+                "
+                allowfullscreen
+                class="tarjeta-servicio__video"
+              ></iframe>
+            } @else if (servicio.imagen) {
+              <img
+                [src]="servicio.imagen"
+                [alt]="servicio.titulo"
+                loading="lazy"
+                class="tarjeta-servicio__imagen"
+              />
+            }
+          </div>
+
+          <!-- Content -->
+          <div class="tarjeta-servicio__contenido">
+            <h3 class="tarjeta-servicio__nombre font-display text-primary">
+              {{ servicio.titulo }}
+            </h3>
+            <p class="tarjeta-servicio__descripcion text-muted">
+              {{ servicio.descripcion }}
+            </p>
+            <button
+              type="button"
+              class="tarjeta-servicio__boton bg-accent text-white font-display"
+              (click)="desplazarAContacto()"
+            >
+              Presupuesto
+            </button>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

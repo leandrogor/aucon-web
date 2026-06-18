@@ -1,0 +1,13 @@
+<section class="grilla-logos-seccion">
+  @if (titulo()) {
+    <h2 class="grilla-titulo font-display">{{ titulo() }}</h2>
+  }
+
+  <div class="grilla-contenedor">
+    @for (logo of logos(); track logo.nombre) {
+      <div class="grilla-item">
+        <img [src]="logo.rutaImagen" [alt]="logo.nombre" class="grilla-imagen" loading="lazy" />
+      </div>
+    }
+  </div>
+</section>

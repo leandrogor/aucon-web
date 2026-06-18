@@ -1,0 +1,41 @@
+<section id="beneficios" class="seccion-beneficios seccion-padding bg-surface-alt">
+  <div class="contenedor">
+    <h2 class="seccion-beneficios__titulo font-display text-primary">
+      Beneficios Impositivos y Económicos
+    </h2>
+
+    <div class="seccion-beneficios__acordeon">
+      @for (seccion of secciones(); track seccion.titulo; let i = $index) {
+        <div class="acordeon-item" [class.acordeon-item--abierto]="indiceAbierto() === i">
+          <button
+            type="button"
+            class="acordeon-item__cabecera"
+            (click)="alternarSeccion(i)"
+            [attr.aria-expanded]="indiceAbierto() === i"
+          >
+            <span class="acordeon-item__titulo font-display">
+              {{ seccion.titulo }}
+            </span>
+            <svg
+              class="acordeon-item__chevron"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+
+          <div class="acordeon-item__panel">
+            <div class="acordeon-item__contenido text-muted">
+              {{ seccion.contenido }}
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

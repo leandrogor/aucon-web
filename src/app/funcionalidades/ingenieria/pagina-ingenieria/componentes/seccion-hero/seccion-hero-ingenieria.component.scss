@@ -1,0 +1,144 @@
+.seccion-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-primary) url('/assets/images/general/hero-ingenieria.jpg') center / cover
+    no-repeat;
+  color: #fff;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(6, 89, 123, 0.92) 0%, rgba(4, 69, 96, 0.85) 100%);
+  z-index: 1;
+}
+
+.hero-contenido {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 2rem 1.5rem 8rem;
+  text-align: center;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 100px;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.hero-titulo {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 5vw, 3.75rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0 0 1rem;
+}
+
+.hero-subtitulo {
+  font-size: 1.5rem;
+  font-weight: 500;
+  opacity: 0.9;
+  margin: 0 0 2rem;
+}
+
+.hero-cuerpo {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  opacity: 0.9;
+  margin: 0 0 1rem;
+  max-width: 640px;
+  margin-inline: auto;
+}
+
+.hero-cuerpo-secundario {
+  font-size: 1rem;
+  line-height: 1.7;
+  opacity: 0.75;
+  margin: 0 0 2.5rem;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+.hero-acciones {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.boton-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2.5rem;
+  background: var(--color-accent);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.boton-cta:hover {
+  background: #d97706;
+  transform: translateY(-2px);
+}
+
+.badge-experiencia {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: var(--radius-card);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(4px);
+}
+
+.badge-numero {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.badge-texto {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.85;
+  margin-top: 0.25rem;
+}
+
+.hero-ola {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  line-height: 0;
+}
+
+.hero-ola svg {
+  width: 100%;
+  height: 120px;
+}

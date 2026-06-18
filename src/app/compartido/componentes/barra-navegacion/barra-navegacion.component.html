@@ -1,0 +1,80 @@
+<nav class="barra-nav" [class.barra-nav--scrolled]="esScrolled()" [style.--nav-bg]="colorFondo()">
+  <div class="barra-nav__contenido">
+    <!-- Logo -->
+    <a routerLink="/" class="barra-nav__logo">
+      <img [src]="rutaLogo()" alt="Aucon Logo" class="barra-nav__logo-img" />
+    </a>
+
+    <!-- Desktop links -->
+    <ul class="barra-nav__enlaces">
+      @for (enlace of enlaces(); track enlace.fragmento) {
+        <li>
+          <button class="barra-nav__enlace" type="button" (click)="irASeccion(enlace.fragmento)">
+            {{ enlace.etiqueta }}
+          </button>
+        </li>
+      }
+    </ul>
+
+    <!-- Hamburger button -->
+    <button
+      class="barra-nav__hamburguesa"
+      type="button"
+      (click)="alternarMenu()"
+      [attr.aria-expanded]="menuAbierto()"
+    >
+      <span class="barra-nav__hamburguesa-texto">Menú</span>
+      @if (!menuAbierto()) {
+        <svg
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          width="24"
+          height="24"
+        >
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+      } @else {
+        <svg
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          width="24"
+          height="24"
+        >
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      }
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  @if (menuAbierto()) {
+    <ul class="barra-nav__menu-movil">
+      @for (enlace of enlaces(); track enlace.fragmento) {
+        <li>
+          <button
+            class="barra-nav__enlace-movil"
+            type="button"
+            (click)="irASeccion(enlace.fragmento)"
+          >
+            {{ enlace.etiqueta }}
+          </button>
+        </li>
+      }
+    </ul>
+  }
+</nav>

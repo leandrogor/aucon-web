@@ -1,0 +1,69 @@
+:host {
+  display: block;
+}
+
+.grilla-logos-seccion {
+  width: 100%;
+}
+
+.grilla-titulo {
+  text-align: center;
+  font-size: 1.75rem;
+  color: var(--color-text);
+  margin: 0 0 2.5rem;
+
+  @media (min-width: 768px) {
+    font-size: 2.25rem;
+  }
+}
+
+.grilla-contenedor {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 1rem;
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 1.25rem;
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+.grilla-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-surface);
+  border-radius: var(--radius-card);
+  padding: 1.25rem 1rem;
+  box-shadow: var(--shadow-card);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-card-hover);
+
+    .grilla-imagen {
+      filter: grayscale(0);
+      opacity: 1;
+    }
+  }
+}
+
+.grilla-imagen {
+  max-width: 100%;
+  max-height: 56px;
+  object-fit: contain;
+  filter: grayscale(1);
+  opacity: 0.65;
+  transition:
+    filter 0.3s ease,
+    opacity 0.3s ease;
+}

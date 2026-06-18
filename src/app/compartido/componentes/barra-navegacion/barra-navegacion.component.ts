@@ -1,5 +1,6 @@
 import { Component, afterNextRender, inject, input, signal, DestroyRef } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { ServicioTema } from '../../../servicios/tema.service';
 
 @Component({
   selector: 'app-barra-navegacion',
@@ -16,6 +17,7 @@ export class BarraNavegacionComponent {
   readonly menuAbierto = signal(false);
   readonly esScrolled = signal(false);
 
+  readonly tema = inject(ServicioTema);
   private readonly destruirRef = inject(DestroyRef);
 
   constructor() {
@@ -35,6 +37,10 @@ export class BarraNavegacionComponent {
 
   alternarMenu(): void {
     this.menuAbierto.update((abierto) => !abierto);
+  }
+
+  alternarTema(): void {
+    this.tema.alternar();
   }
 
   irASeccion(fragmento: string): void {

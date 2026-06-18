@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { ServicioActualizacion } from './servicios/actualizacion.service';
+import { ServicioSeo } from './servicios/seo.service';
+import { ServicioTema } from './servicios/tema.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +10,10 @@ import { RouterOutlet } from '@angular/router';
   imports: [RouterOutlet],
   template: '<router-outlet />',
 })
-export class AppComponent {}
+export class AppComponent {
+  constructor() {
+    inject(ServicioActualizacion);
+    inject(ServicioSeo);
+    inject(ServicioTema);
+  }
+}

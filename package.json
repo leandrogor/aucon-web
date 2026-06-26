@@ -1,18 +1,19 @@
 {
   "name": "aucon-web",
   "version": "0.0.1",
-  "type": "module",
-  "private": true,
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --open",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "lint": "eslint \"src/**/*.{ts,html}\"",
+    "lint:fix": "eslint . --fix",
     "format": "prettier --write \"src/**/*.{ts,html,scss,css}\"",
     "format:check": "prettier --check \"src/**/*.{ts,html,scss,css}\"",
     "prepare": "husky"
   },
+  "type": "module",
+  "private": true,
   "dependencies": {
     "@angular/common": "^21.2.17",
     "@angular/compiler": "^21.2.17",

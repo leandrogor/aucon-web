@@ -1,68 +1,140 @@
-<main class="pagina-inicio">
-  <div class="hero-contenedor">
+<main
+  class="relative min-h-screen md:h-screen flex flex-col items-center py-4 px-4 md:py-6 md:px-8 text-white select-none overflow-x-hidden"
+>
+  <video
+    class="fixed inset-0 w-full h-full object-cover -z-10 pointer-events-none"
+    autoplay
+    muted
+    loop
+    playsinline
+    tabindex="-1"
+  >
+    <source src="assets/videos/tvbhd170.mp4" type="video/mp4" />
+    <track kind="captions" src="" srclang="es" label="Sin subtítulos" default />
+  </video>
+
+  <!-- Header: Logo Principal (2/3 del tamaño de los secundarios: h-24 vs h-36) -->
+  <header class="w-full flex justify-center mb-3 md:mb-4 flex-none">
+    <div
+      class="bg-white px-5 py-2 md:px-6 md:py-2.5 rounded-2xl border border-white/50 shadow-xl flex justify-center items-center hover:scale-105 transition-transform duration-300"
+    >
+      <img
+        src="assets/images/general/logo-fusionado.png"
+        alt="Aucon"
+        width="2338"
+        height="1888"
+        class="h-24 w-auto object-contain"
+      />
+    </div>
+  </header>
+
+  <!-- Contenedor de Divisiones -->
+  <div
+    class="w-full max-w-4xl flex flex-col md:flex-row gap-4 md:gap-6 items-stretch md:flex-1 md:min-h-0"
+  >
     <!-- Card A: Ingeniería -->
-    <a routerLink="/ingenieria" class="hero-tarjeta hero-tarjeta--ingenieria">
-      <div class="hero-tarjeta__contenido">
+    <a
+      routerLink="/ingenieria"
+      class="flex flex-col items-center justify-between p-4 md:p-5 rounded-2xl border border-white/10 bg-linear-to-br from-[#06597b]/40 to-[#033750]/40 backdrop-blur-lg shadow-lg hover:shadow-2xl hover:border-white/30 hover:scale-[1.01] transition-all duration-300 text-center md:flex-1 md:min-h-0"
+    >
+      <!-- Wrapper del logo: h fija en mobile, crece en desktop -->
+      <div class="h-36 md:flex-1 md:min-h-0 flex items-center justify-center w-full">
         <img
-          src="assets/images/general/logo-ingenieria-vertical.png"
+          src="assets/images/general/logo-industrial-circular.png"
           alt="Aucon Ingeniería Logo"
-          class="hero-tarjeta__logo"
+          class="h-full w-auto max-h-full object-contain drop-shadow-md transition-transform duration-300 hover:scale-105"
         />
-        <div class="hero-tarjeta__textos">
-          <span class="hero-tarjeta__division">Aucon | Ingeniería Industrial</span>
-          <h1 class="hero-tarjeta__titulo font-display">Automatización y Control</h1>
-          <span class="hero-tarjeta__cta">
-            Ingresar
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              width="20"
-              height="20"
-            >
-              <line x1="5" y1="12" x2="19" y2="12" />
-              <polyline points="12 5 19 12 12 19" />
-            </svg>
-          </span>
-        </div>
+      </div>
+      <div class="flex-none flex flex-col gap-1 mt-3">
+        <span class="text-base font-semibold tracking-wider uppercase text-white/80"
+          >Aucon | Ingeniería Industrial</span
+        >
+        <h2 class="text-xl font-extrabold font-display tracking-wide leading-tight">
+          Automatización y Control
+        </h2>
+        <span
+          class="inline-flex items-center justify-center gap-2 mt-3 px-4 py-1.5 border border-white/30 rounded-lg text-base font-bold uppercase tracking-wider font-display bg-white/5 hover:bg-white/10 hover:border-white/50 transition-all duration-300"
+        >
+          Ingresar
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="w-4 h-4"
+          >
+            <line x1="5" y1="12" x2="19" y2="12" />
+            <polyline points="12 5 19 12 12 19" />
+          </svg>
+        </span>
       </div>
     </a>
 
     <!-- Card B: Sustentable -->
-    <a routerLink="/sustentable" class="hero-tarjeta hero-tarjeta--sustentable">
-      <div class="hero-tarjeta__contenido">
+    <a
+      routerLink="/sustentable"
+      class="flex flex-col items-center justify-between p-4 md:p-5 rounded-2xl border border-white/10 bg-linear-to-br from-[#0a4a2e]/40 to-[#062f1c]/40 backdrop-blur-lg shadow-lg hover:shadow-2xl hover:border-white/30 hover:scale-[1.01] transition-all duration-300 text-center md:flex-1 md:min-h-0"
+    >
+      <!-- Wrapper del logo: h fija en mobile, crece en desktop -->
+      <div class="h-36 md:flex-1 md:min-h-0 flex items-center justify-center w-full">
         <img
-          src="assets/images/general/logo-sustentable-vertical.png"
+          src="assets/images/general/logo-sustentable-circular.png"
           alt="Aucon Sustentable Logo"
-          class="hero-tarjeta__logo"
+          class="h-full w-auto max-h-full object-contain drop-shadow-md transition-transform duration-300 hover:scale-105"
         />
-        <div class="hero-tarjeta__textos">
-          <span class="hero-tarjeta__division">Aucon | Energía Sustentable</span>
-          <h2 class="hero-tarjeta__titulo font-display">Energías Renovables</h2>
-          <span class="hero-tarjeta__cta">
-            Ingresar
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              width="20"
-              height="20"
-            >
-              <line x1="5" y1="12" x2="19" y2="12" />
-              <polyline points="12 5 19 12 12 19" />
-            </svg>
-          </span>
-        </div>
+      </div>
+      <div class="flex-none flex flex-col gap-1 mt-3">
+        <span class="text-base font-semibold tracking-wider uppercase text-white/80"
+          >Aucon | Energía Sustentable</span
+        >
+        <h2 class="text-xl font-extrabold font-display tracking-wide leading-tight">
+          Energías Renovables
+        </h2>
+        <span
+          class="inline-flex items-center justify-center gap-2 mt-3 px-4 py-1.5 border border-white/30 rounded-lg text-base font-bold uppercase tracking-wider font-display bg-white/5 hover:bg-white/10 hover:border-white/50 transition-all duration-300"
+        >
+          Ingresar
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="w-4 h-4"
+          >
+            <line x1="5" y1="12" x2="19" y2="12" />
+            <polyline points="12 5 19 12 12 19" />
+          </svg>
+        </span>
       </div>
     </a>
+  </div>
+
+  <!-- Mensaje Central -->
+  <div
+    class="w-full max-w-xl bg-white/94 backdrop-blur-md rounded-2xl p-4 md:p-5 shadow-xl border border-white/50 text-center transition-all duration-300 hover:-translate-y-0.5 hover:shadow-2xl text-slate-800 mt-4 flex-none"
+  >
+    <div class="text-6xl font-black text-[#033750] font-display tracking-tight leading-none mb-0.5">
+      {{ aniosTrayectoria() }}
+    </div>
+    <div class="text-base font-bold text-[#033750]/60 uppercase tracking-widest font-display mb-2">
+      años
+    </div>
+    <div class="text-xl font-extrabold text-[#ba2121] uppercase tracking-wider font-display mb-3">
+      Ingeniería y Soluciones
+    </div>
+    <p class="text-base font-semibold text-slate-700 leading-relaxed mb-1.5">
+      Una empresa en evolución permanente desde 1995. Atentos a las necesidades de nuestros clientes
+      y nuestro medio ambiente.
+    </p>
+    <p class="text-base font-semibold text-slate-500 leading-relaxed">
+      Dedicamos nuestro esfuerzo a la automatización el control y el manejo de la energía.
+    </p>
   </div>
 </main>
 

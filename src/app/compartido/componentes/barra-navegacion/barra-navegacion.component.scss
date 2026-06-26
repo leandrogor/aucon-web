@@ -42,6 +42,7 @@
 .barra-nav__logo-img {
   height: 40px;
   width: auto;
+  filter: brightness(0) invert(1);
 
   @media (min-width: 768px) {
     height: 44px;

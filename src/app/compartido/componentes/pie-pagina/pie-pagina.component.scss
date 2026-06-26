@@ -28,10 +28,14 @@
 }
 
 .pie-logo {
-  height: 48px;
+  height: 64px;
   width: auto;
+  object-fit: contain;
   margin-bottom: 1.25rem;
-  filter: brightness(0) invert(1);
+  /* El logo fusionado tiene fondo blanco — lo envolvemos visualmente */
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 6px 10px;
 }
 
 .pie-divisiones {

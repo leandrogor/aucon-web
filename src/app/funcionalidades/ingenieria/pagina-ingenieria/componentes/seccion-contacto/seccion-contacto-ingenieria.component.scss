@@ -59,6 +59,28 @@
   color: var(--color-primary-dark);
 }
 
+.cta-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1.5rem;
+  background: #25d366;
+  color: #052310;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  border-radius: 8px;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+  margin-top: 0.5rem;
+  width: fit-content;
+}
+
+.cta-whatsapp:hover {
+  background: #1da851;
+  transform: translateY(-2px);
+}
+
 .redes-sociales {
   display: flex;
   gap: 1rem;

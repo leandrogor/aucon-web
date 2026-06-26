@@ -1,15 +1,20 @@
 <main
   class="relative min-h-screen md:h-screen flex flex-col items-center py-4 px-4 md:py-6 md:px-8 text-white select-none overflow-x-hidden"
 >
+  <div
+    class="fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat"
+    style="background-image: url('assets/images/general/poster-inicio.png')"
+  ></div>
   <video
-    class="fixed inset-0 w-full h-full object-cover -z-10 pointer-events-none"
-    autoplay
+    #videoFondo
+    class="fixed inset-0 w-full h-full object-cover -z-10 pointer-events-none transition-opacity duration-1000"
+    [class.opacity-0]="!videoListo()"
     muted
     loop
     playsinline
     tabindex="-1"
+    (canplay)="onVideoListo()"
   >
-    <source src="assets/videos/tvbhd170.mp4" type="video/mp4" />
     <track kind="captions" src="" srclang="es" label="Sin subtítulos" default />
   </video>
 

@@ -4,14 +4,15 @@ allowBuilds:
   lmdb: true
   msgpackr-extract: true
 minimumReleaseAgeExclude:
-  - '@angular-devkit/architect@0.2102.16'
-  - '@angular-devkit/core@21.2.16'
-  - '@angular-devkit/schematics@21.2.16'
-  - '@angular/build@21.2.16'
-  - '@angular/cli@21.2.16'
-  - '@schematics/angular@21.2.16'
+  - '@angular-devkit/architect@0.2102.17'
+  - '@angular-devkit/core@21.2.17'
+  - '@angular-devkit/schematics@21.2.17'
+  - '@angular/build@21.2.17'
+  - '@angular/cli@21.2.17'
+  - '@schematics/angular@21.2.17'
 
 overrides:
   vite: ^7.3.5
   esbuild: ^0.28.1
   '@babel/core': ^7.29.1
+  undici: ^7.28.0

@@ -1,5 +1,6 @@
 import { Component, inject, input, signal } from '@angular/core';
 import { ServicioContacto } from '../../../servicios/contacto.service';
+import { CONTACTO_CONFIG } from '../../constantes/contacto.const';
 
 @Component({
   selector: 'app-formulario-contacto',
@@ -8,13 +9,12 @@ import { ServicioContacto } from '../../../servicios/contacto.service';
   styleUrl: './formulario-contacto.component.scss',
 })
 export class FormularioContactoComponent {
+  readonly contactoInfo = CONTACTO_CONFIG;
   readonly nombrePagina = input.required<string>();
-  readonly mostrarCiudad = input<boolean>(false);
 
   readonly nombre = signal('');
   readonly email = signal('');
   readonly telefono = signal('');
-  readonly ciudad = signal('');
   readonly mensaje = signal('');
   readonly enviado = signal(false);
   readonly errores = signal<Record<string, string>>({});

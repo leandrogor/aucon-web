@@ -15,20 +15,22 @@
       <address class="pie-direccion">
         <p>
           <a
-            href="https://www.google.com/maps/search/?api=1&query=vigo%202176,cordoba,%20argentina"
+            [href]="contactoInfo.direccion.link"
             target="_blank"
             rel="noopener noreferrer"
             class="pie-enlace"
-            >Vigo 2176, Córdoba, Argentina</a
+            >{{ contactoInfo.direccion.mostrar }}</a
           >
         </p>
         <p>
-          <a href="mailto:info@auconingenieria.com.ar" class="pie-enlace">
-            info&#64;auconingenieria.com.ar
+          <a [href]="'mailto:' + contactoInfo.email" class="pie-enlace">
+            {{ contactoInfo.email }}
           </a>
         </p>
         <p>
-          <a href="tel:+5493515942257" class="pie-enlace"> +54 9 351 594-2257 </a>
+          <a [href]="contactoInfo.telefono.link" class="pie-enlace">
+            {{ contactoInfo.telefono.mostrar }}
+          </a>
         </p>
       </address>
     </div>
@@ -39,7 +41,7 @@
       <div class="pie-redes">
         <!-- Facebook -->
         <a
-          href="https://www.facebook.com/auconingenieria"
+          [href]="contactoInfo.redes.facebook"
           target="_blank"
           rel="noopener noreferrer"
           class="pie-red-enlace"
@@ -59,7 +61,7 @@
         </a>
         <!-- Instagram -->
         <a
-          href="https://www.instagram.com/auconingenieria"
+          [href]="contactoInfo.redes.instagram"
           target="_blank"
           rel="noopener noreferrer"
           class="pie-red-enlace"
@@ -79,7 +81,7 @@
         </a>
         <!-- LinkedIn -->
         <a
-          href="https://www.linkedin.com/company/aucon-ingenieria-srl/about/"
+          [href]="contactoInfo.redes.linkedin"
           target="_blank"
           rel="noopener noreferrer"
           class="pie-red-enlace"

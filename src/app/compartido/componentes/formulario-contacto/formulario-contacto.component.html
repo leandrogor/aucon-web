@@ -23,7 +23,7 @@
           id="campo-email"
           class="campo-input"
           type="email"
-          placeholder="tu@email.com"
+          placeholder="ejemplo@correo.com"
           [value]="email()"
           (input)="email.set($any($event.target).value)"
           [class.campo-error]="errores()['email']"
@@ -39,7 +39,7 @@
           id="campo-telefono"
           class="campo-input"
           type="tel"
-          placeholder="+54 9 351 ..."
+          placeholder="Ej: +54 9 351 123-4567"
           [value]="telefono()"
           (input)="telefono.set($any($event.target).value)"
           [class.campo-error]="errores()['telefono']"
@@ -48,20 +48,6 @@
           <span class="mensaje-error">{{ errores()['telefono'] }}</span>
         }
       </div>
-
-      @if (mostrarCiudad()) {
-        <div class="campo-grupo">
-          <label class="campo-etiqueta" for="campo-ciudad">Ciudad</label>
-          <input
-            id="campo-ciudad"
-            class="campo-input"
-            type="text"
-            placeholder="Tu ciudad"
-            [value]="ciudad()"
-            (input)="ciudad.set($any($event.target).value)"
-          />
-        </div>
-      }
 
       <div class="campo-grupo">
         <label class="campo-etiqueta" for="campo-mensaje">Mensaje *</label>
@@ -103,7 +89,7 @@
       </p>
       <a
         class="enlace-whatsapp"
-        href="https://wa.me/5493515942257"
+        [href]="contactoInfo.telefono.whatsapp"
         target="_blank"
         rel="noopener noreferrer"
       >

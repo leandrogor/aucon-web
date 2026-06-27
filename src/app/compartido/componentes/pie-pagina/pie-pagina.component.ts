@@ -1,5 +1,6 @@
 import { Component, computed } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { CONTACTO_CONFIG } from '../../constantes/contacto.const';
 
 @Component({
   selector: 'app-pie-pagina',
@@ -9,5 +10,6 @@ import { RouterLink } from '@angular/router';
   styleUrl: './pie-pagina.component.scss',
 })
 export class PiePaginaComponent {
+  readonly contactoInfo = CONTACTO_CONFIG;
   readonly anioActual = computed(() => new Date().getFullYear());
 }

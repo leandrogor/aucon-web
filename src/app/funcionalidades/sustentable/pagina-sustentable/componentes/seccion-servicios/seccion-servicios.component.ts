@@ -1,5 +1,10 @@
-import { Component, signal } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { TarjetaServicio } from '../../../../../modelos/tarjeta-servicio';
+
+interface ServicioPresentacion extends Omit<TarjetaServicio, 'urlVideo'> {
+  urlVideo?: SafeResourceUrl;
+}
 
 @Component({
   selector: 'app-seccion-servicios',
@@ -8,7 +13,9 @@ import { TarjetaServicio } from '../../../../../modelos/tarjeta-servicio';
   styleUrl: './seccion-servicios.component.scss',
 })
 export class SeccionServiciosComponent {
-  readonly servicios = signal<TarjetaServicio[]>([
+  private readonly sanitizer = inject(DomSanitizer);
+
+  private readonly serviciosRaw = signal<TarjetaServicio[]>([
     {
       titulo: 'Paneles Solares',
       descripcion:
@@ -34,6 +41,29 @@ export class SeccionServiciosComponent {
       imagen: 'assets/images/servicios/conversion-vehicular.jpg',
     },
   ]);
+
+  readonly servicios = computed<ServicioPresentacion[]>(() =>
+    this.serviciosRaw().map((s) => {
+      let safeUrl: SafeResourceUrl | undefined = undefined;
+
+      if (s.urlVideo) {
+        // Validación de seguridad para prevenir XSS y asegurar que la URL sea segura para omitir la sanitización
+        const esYoutubeEmbed =
+          /^https:\/\/(www\.)?youtube\.com\/embed\/[a-zA-Z0-9_-]+(?:\?.*)?$/.test(s.urlVideo);
+
+        if (esYoutubeEmbed) {
+          safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(s.urlVideo);
+        } else {
+          console.warn(`URL de video bloqueada por políticas de seguridad: ${s.urlVideo}`);
+        }
+      }
+
+      return {
+        ...s,
+        urlVideo: safeUrl,
+      };
+    }),
+  );
 
   desplazarAContacto(): void {
     document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' });

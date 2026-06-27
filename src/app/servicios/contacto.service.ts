@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { CONTACTO_CONFIG } from '../compartido/constantes/contacto.const';
 
 // NOTA: replace with Formspree or serverless function in the future if a backend is added
 @Injectable({ providedIn: 'root' })
@@ -11,7 +12,7 @@ export class ServicioContacto {
     const cuerpo = encodeURIComponent(
       `Nombre: ${datos.nombre}\r\nE-mail: ${datos.email}\r\nTeléfono: ${datos.telefono}\r\n\r\n${datos.mensaje}`,
     );
-    return `mailto:info@auconingenieria.com.ar?subject=${asunto}&body=${cuerpo}`;
+    return `mailto:${CONTACTO_CONFIG.email}?subject=${asunto}&body=${cuerpo}`;
   }
 
   enviarConsulta(

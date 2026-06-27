@@ -26,7 +26,11 @@
   &__superposicion {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(6, 89, 123, 0.88) 0%, rgba(4, 69, 96, 0.75) 100%);
+    background: linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--color-primary) 88%, transparent) 0%,
+      color-mix(in srgb, var(--color-primary-dark) 75%, transparent) 100%
+    );
   }
 
   &__contenido {
@@ -111,6 +115,11 @@
 
       @media (min-width: 768px) {
         height: 120px;
+      }
+
+      path {
+        fill: var(--color-surface);
+        transition: fill 0.3s ease;
       }
     }
   }

@@ -39,6 +39,18 @@
   --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.08), 0 4px 16px rgba(0, 0, 0, 0.05);
   --shadow-card-hover: 0 4px 12px rgba(0, 0, 0, 0.12), 0 8px 24px rgba(0, 0, 0, 0.08);
   --radius-card: 12px;
+
+  /* Navigation Bar Styles (Light Mode) */
+  --color-nav-bg: rgba(255, 255, 255, 0.9);
+  --color-nav-text: #0f172a;
+  --color-nav-hover-bg: rgba(6, 89, 123, 0.08);
+  --color-nav-hover-text: #06597b;
+  --color-nav-border: rgba(15, 23, 42, 0.08);
+  --logo-filter: none;
+
+  /* Footer Social Styles (Light Mode) */
+  --color-footer-social-bg: #18546d;
+  --color-footer-social-hover: #2c6379;
 }
 
 .dark {
@@ -54,6 +66,51 @@
 
   --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
   --shadow-card-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+
+  /* Navigation Bar Styles (Dark Mode) */
+  --color-nav-bg: rgba(4, 69, 96, 0.85); /* Deep translucent blue to match brand */
+  --color-nav-text: rgba(255, 255, 255, 0.9);
+  --color-nav-hover-bg: rgba(255, 255, 255, 0.1);
+  --color-nav-hover-text: #ffffff;
+  --color-nav-border: rgba(255, 255, 255, 0.1);
+  --logo-filter: brightness(0) invert(1);
+
+  /* Footer Social Styles (Dark Mode) */
+  --color-footer-social-bg: #18546d;
+  --color-footer-social-hover: #2c6379;
+}
+
+/* ============================================================
+   SUSTENTABLE GREEN THEME OVERRIDES
+   ============================================================ */
+.tema-verde {
+  --color-primary: #0a5c36;
+  --color-primary-dark: #063f24;
+  --color-primary-light: #eaf6ef;
+
+  /* Navigation Bar Styles in Sustainable (Light Mode) */
+  --color-nav-hover-bg: rgba(10, 92, 54, 0.08);
+  --color-nav-hover-text: #0a5c36;
+
+  /* Footer Social Styles in Sustainable (Light Mode) */
+  --color-footer-social-bg: #0e5e37;
+  --color-footer-social-hover: #167a49;
+}
+
+.dark .tema-verde,
+.tema-verde.dark {
+  --color-primary: #0fa366;
+  --color-primary-dark: #0a5c36;
+  --color-primary-light: #062f1c;
+
+  /* Navigation Bar Styles in Sustainable (Dark Mode) */
+  --color-nav-bg: rgba(6, 47, 28, 0.85); /* Deep translucent green to match sustainable branding */
+  --color-nav-hover-bg: rgba(255, 255, 255, 0.1);
+  --color-nav-hover-text: #ffffff;
+
+  /* Footer Social Styles in Sustainable (Dark Mode) */
+  --color-footer-social-bg: #0e5e37;
+  --color-footer-social-hover: #167a49;
 }
 
 /* ============================================================

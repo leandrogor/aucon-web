@@ -1,4 +1,8 @@
-<nav class="barra-nav" [class.barra-nav--scrolled]="esScrolled()" [style.--nav-bg]="colorFondo()">
+<nav
+  class="barra-nav"
+  [class.barra-nav--scrolled]="esScrolled()"
+  [style.--nav-bg]="colorFondo() || null"
+>
   <div class="barra-nav__contenido">
     <!-- Logo -->
     <a routerLink="/" class="barra-nav__logo">

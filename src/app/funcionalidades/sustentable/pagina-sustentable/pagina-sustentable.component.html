@@ -1,17 +1,19 @@
-<app-barra-navegacion
-  [enlaces]="enlacesNav"
-  rutaLogo="assets/images/general/logo-sustentable.png"
-/>
+<div class="tema-verde min-h-screen flex flex-col">
+  <app-barra-navegacion
+    [enlaces]="enlacesNav"
+    rutaLogo="assets/images/general/logo-sustentable.png"
+  />
 
-<main>
-  <app-seccion-hero-sustentable />
-  <app-seccion-servicios />
-  <app-seccion-ventajas />
-  <app-barra-estadisticas-sustentable />
-  <app-seccion-beneficios-impositivos />
-  <app-seccion-faq />
-  <app-seccion-contacto-sustentable />
-</main>
+  <main class="flex-grow">
+    <app-seccion-hero-sustentable />
+    <app-seccion-servicios />
+    <app-seccion-ventajas />
+    <app-barra-estadisticas-sustentable />
+    <app-seccion-beneficios-impositivos />
+    <app-seccion-faq />
+    <app-seccion-contacto-sustentable />
+  </main>
 
-<app-pie-pagina />
-<app-boton-whatsapp />
+  <app-pie-pagina />
+  <app-boton-whatsapp />
+</div>

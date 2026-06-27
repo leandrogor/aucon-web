@@ -12,7 +12,7 @@ import { ServicioTema } from '../../../servicios/tema.service';
 export class BarraNavegacionComponent {
   readonly enlaces = input.required<{ etiqueta: string; fragmento: string }[]>();
   readonly rutaLogo = input.required<string>();
-  readonly colorFondo = input<string>('#06597b');
+  readonly colorFondo = input<string | undefined>(undefined);
 
   readonly menuAbierto = signal(false);
   readonly esScrolled = signal(false);

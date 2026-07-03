@@ -1,4 +1,4 @@
-import { Component, computed, signal, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
+import { Component, computed, signal, ElementRef, ViewChild, afterNextRender } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { BotonWhatsappComponent } from '../../../compartido/componentes/boton-whatsapp/boton-whatsapp.component';
 
@@ -9,19 +9,22 @@ import { BotonWhatsappComponent } from '../../../compartido/componentes/boton-wh
   templateUrl: './pagina-inicio.component.html',
   styleUrl: './pagina-inicio.component.scss',
 })
-export class PaginaInicioComponent implements AfterViewInit {
+export class PaginaInicioComponent {
   readonly aniosTrayectoria = computed(() => new Date().getFullYear() - 1995);
   readonly videoListo = signal(false);
 
   @ViewChild('videoFondo') private readonly videoFondoRef!: ElementRef<HTMLVideoElement>;
 
-  ngAfterViewInit(): void {
-    // Cargamos el video en 2do plano, luego de que la página sea interactiva
-    const video = this.videoFondoRef.nativeElement;
-    video.src = 'assets/videos/tvbhd170.mp4';
-    video.load();
-    video.play().catch(() => {
-      /* autoplay puede estar bloqueado */
+  constructor() {
+    afterNextRender(() => {
+      const video = this.videoFondoRef.nativeElement;
+      if (video) {
+        video.src = 'assets/videos/tvbhd170.mp4';
+        video.load();
+        video.play().catch(() => {
+          /* autoplay puede estar bloqueado */
+        });
+      }
     });
   }
 

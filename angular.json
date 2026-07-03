@@ -31,11 +31,21 @@
                 "input": "src/assets",
                 "output": "assets"
               },
-              "src/manifest.webmanifest"
+              "src/manifest.webmanifest",
+              "src/robots.txt",
+              "src/sitemap.xml"
             ],
             "styles": ["src/styles.css"],
             "scripts": [],
-            "serviceWorker": "src/ngsw-config.json"
+            "serviceWorker": "src/ngsw-config.json",
+            "ssr": {
+              "entry": "src/server.ts"
+            },
+            "server": "src/main.server.ts",
+            "outputMode": "static",
+            "security": {
+              "allowedHosts": []
+            }
           },
           "configurations": {
             "production": {

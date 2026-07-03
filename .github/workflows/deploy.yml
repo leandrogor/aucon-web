@@ -34,7 +34,9 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build application
-        run: pnpm ng build --base-href / --configuration production
+        run: |
+          pnpm ng build --base-href / --configuration production
+          cp dist/aucon-web/browser/index.html dist/aucon-web/browser/404.html
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4

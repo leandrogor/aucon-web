@@ -2,14 +2,28 @@
   <div class="pie-contenido">
     <!-- Logo & divisions -->
     <div class="pie-seccion pie-seccion--marca">
-      <img
-        src="assets/images/general/logo-fusionado-transparente.png"
-        alt="Aucon Logo"
-        class="pie-logo"
-      />
+      <a routerLink="/" class="pie-logo-enlace">
+        <img
+          src="assets/images/general/logo-fusionado-transparente.png"
+          alt="Aucon Logo"
+          class="pie-logo"
+        />
+      </a>
       <nav class="pie-divisiones" aria-label="Divisiones">
-        <a routerLink="/ingenieria" class="pie-division-enlace"> Ingeniería </a>
-        <a routerLink="/sustentable" class="pie-division-enlace"> Sustentable </a>
+        <a
+          routerLink="/ingenieria"
+          class="pie-division-enlace"
+          (click)="navegarOScroll('/ingenieria', $event)"
+        >
+          Ingeniería
+        </a>
+        <a
+          routerLink="/sustentable"
+          class="pie-division-enlace"
+          (click)="navegarOScroll('/sustentable', $event)"
+        >
+          Sustentable
+        </a>
       </nav>
     </div>
 
